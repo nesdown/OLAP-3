@@ -65,7 +65,7 @@ EXECUTE PROCEDURE date_parts();
 CREATE TABLE summary_levels
 (
     id          SERIAL PRIMARY KEY,
-    data_type   TEXT       NOT NULL UNIQUE
+    data_type   TEXT   NOT NULL UNIQUE
 );
 
 INSERT INTO summarization (type)
@@ -77,9 +77,9 @@ VALUES ('Country'),
 CREATE TABLE IF NOT EXISTS facts_ecology
 (
     id                      SERIAL PRIMARY KEY,
-    country_id              INT REFERENCES dim_countries (country_id),
-    pollution_id            INT REFERENCES dim_pollution (pollution_id),
-    vehicles_id             INT REFERENCES dim_vehicles (vehicle_id),
+    country_id              INT REFERENCES dim_countries    (country_id),
+    pollution_id            INT REFERENCES dim_pollution    (pollution_id),
+    vehicles_id             INT REFERENCES dim_vehicles     (vehicle_id),
     ranking_date_id         INT REFERENCES dim_ranking_date (date_id),
     happiness_id            INT REFERENCES dim_happiness_id (happiness_id),
 
